@@ -54,7 +54,7 @@ void task2() {
 
 void task3() {
     srand(time(NULL));
-    cout << "Задание 1\nВывести количество максимальных элементов массива\n";
+    cout << "Задание 3\nЗаменить максимальные элементы массива нулями\n";
     double arr[10];
 
     for (int i = 0; i < sizeof(arr) / 8; i++)
@@ -79,13 +79,39 @@ void task3() {
     cout << endl;
 }
 
+void task4() {
+    srand(time(NULL));
+    cout << "Задание 4\nЗаменить максимальные элементы массива значениями с противоположными знаками\n";
+    double arr[10];
+
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        arr[i] = rand() % 6;
+
+    cout << "Элементы массива: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        cout << arr[i] << " ";
+
+    double min = *min_element(begin(arr), end(arr));
+    cout << endl << "Минимальный элемент массива: " << min << endl;
+
+    cout << "Элементы массива после замены: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++) {
+        if (arr[i] == min)
+            arr[i] *= (-1);
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
 
     //task1();
     //task2();
-    task3();
+    //task3();
+    task4();
+
 
     system("pause");
     return 0;
