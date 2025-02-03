@@ -103,6 +103,34 @@ void task4() {
     cout << endl;
 }
 
+void task5() {
+    srand(time(NULL));
+    cout << "Задание 5\nЗаменить максимальный элемент массива первым\n";
+    double arr[10];
+
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        arr[i] = rand() % 6;
+
+    cout << "Элементы массива: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        cout << arr[i] << " ";
+
+    double max = *max_element(begin(arr), end(arr));
+    cout << endl << "Максимальный элемент массива: " << max << endl;
+
+    cout << "Элементы массива после замены: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++) {
+        if (arr[i] == max) {
+            swap(arr[i], arr[0]);
+            break;
+        }     
+    }
+    for (int i = 0; i < sizeof(arr) / 8; i++) {
+            cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
@@ -110,7 +138,8 @@ int main()
     //task1();
     //task2();
     //task3();
-    task4();
+    //task4();
+    task5();
 
 
     system("pause");
