@@ -131,6 +131,80 @@ void task5() {
     cout << endl;
 }
 
+void task6() {
+    srand(time(NULL));
+    cout << "Задание 6\nВывести на экран номера всех элементов, не совпадающих с максимальным\n";
+    double arr[10];
+
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        arr[i] = rand() % 6;
+
+    cout << "Элементы массива: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        cout << arr[i] << " ";
+
+    double max = *max_element(begin(arr), end(arr));
+    cout << endl << "Максимальный элемент массива: " << max << endl;
+
+    cout << "Элементы массива, не совпадающие с максимальным: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++) {
+        if (arr[i] != max) {
+            cout << arr[i] << " ";
+        }     
+    }
+    cout << endl;
+}
+
+void task7() {
+    srand(time(NULL));
+    cout << "Задание 7\nНайти номер первого минимального элемента.\n";
+    double arr[10];
+
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        arr[i] = rand() % 6;
+
+    cout << "Элементы массива: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        cout << arr[i] << " ";
+
+    double min = *min_element(begin(arr), end(arr));
+    cout << endl << "Минимальный элемент массива: " << min << endl;
+
+    cout << "Номер первого минимального элемента массива: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++) {
+        if (arr[i] == min) {
+            cout << i << endl;
+            break;
+        }  
+    }
+    cout << endl;
+}
+
+void task8() {//НЕ ЗАКОНЧЕНО
+    srand(time(NULL));
+    cout << "Задание 8\nНайти номер первого минимального элемента\n";
+    double arr[10];
+
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        arr[i] = rand() % 6;
+
+    cout << "Элементы массива: ";
+    for (int i = 0; i < sizeof(arr) / 8; i++)
+        cout << arr[i] << " ";
+
+    double max = *max_element(begin(arr), end(arr));
+    cout << endl << "Максимальный элемент массива: " << max << endl;
+
+    int count = 0;
+    for (int i = 0; i < sizeof(arr) / 8; i++) {
+        if (arr[i] == max) {
+            
+        }
+            
+    }
+    cout << "Количество максимальных элементов массива: " << count << endl;
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
@@ -140,6 +214,8 @@ int main()
     //task3();
     //task4();
     //task5();
+    //task6();
+    //task7();
 
 
     system("pause");
